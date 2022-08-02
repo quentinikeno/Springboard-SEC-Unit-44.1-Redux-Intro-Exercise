@@ -1,0 +1,12 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+#faceDiv {
+	font-size: 2rem;
+}
+
+#buttonDiv {
+	margin: 1rem auto;
+}
