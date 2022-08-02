@@ -1,5 +1,4 @@
 const initialMood = { mood: "=^.^=" };
-const faceDiv = document.getElementById("faceDiv");
 
 function moodReducer(state = initialMood, action) {
 	switch (action.type) {
@@ -17,7 +16,3 @@ function moodReducer(state = initialMood, action) {
 }
 
 const store = Redux.createStore(moodReducer);
-
-store.subscribe(() => {
-	faceDiv.innerText = store.getState().mood;
-});

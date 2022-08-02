@@ -1,10 +1,16 @@
-window.onload = () => {
-	const buttonDiv = document.getElementById("buttonDiv");
+const buttonDiv = document.getElementById("buttonDiv");
+const faceDiv = document.getElementById("faceDiv");
 
-	buttonDiv.addEventListener("click", (event) => {
-		if (event.target.tagName === "BUTTON") {
-			const { mood } = event.target.dataset;
-			store.dispatch({ type: mood });
-		}
-	});
-};
+function updateFace() {
+	faceDiv.innerText = store.getState().mood;
+}
+
+buttonDiv.addEventListener("click", (event) => {
+	if (event.target.tagName === "BUTTON") {
+		const { mood } = event.target.dataset;
+		store.dispatch({ type: mood });
+	}
+});
+
+updateFace();
+store.subscribe(updateFace);
